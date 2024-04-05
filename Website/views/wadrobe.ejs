@@ -1,0 +1,64 @@
+<%- include("partials/header.ejs") %>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="/styles/wadrobe.css">
+<style>
+    body {
+      background-image: url('images/fashion.jpg');
+      background-size: cover; /* Cover the entire background */
+      background-position: center; /* Center the background image */
+      /*background-repeat: no-repeat; Prevent the background from repeating */
+    }
+  </style>
+  
+
+<h1> Your Wadrobe</h1>
+<br><br>
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="images/wadrobe.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Add or remove clothes from your wadrobe<br></h1>
+      <p class="lead">Change associated tags of your clothes or customise its features accroding to your liking. Manage all your clothes at one place.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Manage</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Show</button>
+      </div>
+    </div>
+</div>
+
+<br><br>
+<br><br>
+
+<h2>File Upload & Image Preview</h2>
+<p class="lead">Add image <b>of your cloth</b></p>
+
+<!-- Upload  -->
+<form id="file-upload-form" class="uploader">
+  <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+  <label for="file-upload" id="file-drag">
+    <img id="file-image" src="#" alt="Preview" class="hidden">
+    <div id="start">
+      <i class="fa fa-download" aria-hidden="true"></i>
+      <div>Select a file or drag here</div>
+      <div id="notimage" class="hidden">Please select an image</div>
+      <span id="file-upload-btn" class="btn btn-primary">Upload</span>
+    </div>
+    <div id="response" class="hidden">
+      <div id="messages"></div>
+      <progress class="progress" id="file-progress" value="0">
+        <span>0</span>%
+      </progress>
+    </div>
+  </label>
+</form>
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<%- include("partials/footer.ejs") %>

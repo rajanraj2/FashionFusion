@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+
+<style>
+  body {
+    background-image: url('images/fashion.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    /*background-repeat: no-repeat; Prevent the background from repeating */
+  }
+</style>
+
+
+<h1>Subsribe</h1>
+<img class="profile" src="images/cat.jpeg" alt="cat profile">
+<br>
+<p>Become a premium member and enjoy unlimited recommendations without any ads</p>
+<br><br>
+<!-- <button onclick="window.location.href='/buy'" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Buy subscription</button> -->
+
+
+<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_NuxEMWCGpim9b6" async> </script> </form>
+
+<!-- <form><script src="https://cdn.razorpay.com/static/widget/subscription-button.js" data-subscription_button_id="pl_Nux9oXVZZMgQfH" data-button_theme="brand-color" async> </script> </form> -->
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+  <%- include("partials/footer.ejs") %>

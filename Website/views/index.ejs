@@ -1,6 +1,21 @@
 <%-include("partials/header.ejs") %>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+  body {
+    background-image: url('images/fashion.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    /*background-repeat: no-repeat; Prevent the background from repeating */
+  }
+
+  .feature-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .75rem;
+  }
+
+</style>
   <h1>Home  </h1>
   <br><br>
 
@@ -10,19 +25,24 @@
 
   <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
     <div class="feature col">
+      <!-- add text-bg-primary for background color in next div -->
       <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
         <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        <img src="/images/wardrobe.svg" alt="svg">
       </div>
       <h3 class="fs-2 text-body-emphasis">Wardrobe</h3>
       <p>Add or delete clothes from your closet.</p>
-      <a href="#" class="icon-link">
+      <a href="/wadrobe" class="icon-link">
         Manage Wardrobe
         <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
       </a>
     </div>
+
+
     <div class="feature col">
       <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-        <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"></use></svg>
+        
+        <img src="/images/calendar.svg" alt="svg" width="40rem" height="40rem">
       </div>
       <h3 class="fs-2 text-body-emphasis">Calendar</h3>
       <p>Check out the number of times and when you wore your any outfit</p>
@@ -31,9 +51,12 @@
         <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
       </a>
     </div>
+
+
     <div class="feature col">
       <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-        <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        
+        <img src="/images/outfit.svg" alt="svg" width="40rem" height="40rem">
       </div>
       <h3 class="fs-2 text-body-emphasis">Outfit Recommendation</h3>
       <p>Get outfit recommendation according to the occasion and weather. Be it the colours or the style, you always look the best.</p>
