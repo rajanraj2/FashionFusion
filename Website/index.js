@@ -29,6 +29,14 @@ app.get("/buy", (req, res) => {
   res.render("contact.ejs");
 })
 
+app.get("/calendar", (req, res) => {
+  res.render("calendar.ejs");
+})
+
+app.get("/log", (req, res) => {
+  res.render("log.ejs");
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

@@ -1,7 +1,8 @@
 html,
 body {
   height: 100%;
-  background-image: url("image2.jpg");
+  /* background-image: url("image2.jpg"); */
+  background-color: #c0d6df !important;
 }
 
 
@@ -47,7 +48,7 @@ form {
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #BDB5D5;
+  border: 2px solid #0d6efd;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -57,7 +58,7 @@ form {
 }
 
 .feedback-input:focus {
-  border: 2px solid #BDB5D5;
+  border: 2px solid #0d6efd;
 }
 
 textarea {
@@ -68,7 +69,7 @@ textarea {
 
 [type="submit"] {
   width: 100%;
-  background: #BDB5D5;
+  background: #0d6efd;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -81,5 +82,5 @@ textarea {
   font-weight: 700;
 }
 [type="submit"]:hover {
-  background: #BDB5D5;
+  background: #0d6efd;
 }
