@@ -17,8 +17,8 @@ app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 })
 
-app.get("/wadrobe", (req, res) => {
-  res.render("wadrobe.ejs");
+app.get("/wardrobe", (req, res) => {
+  res.render("wardrobe.ejs");
 })
 
 app.get("/subscription", (req, res) => {

@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  /* border: red solid 1px; */
 }
 
 i {
@@ -131,6 +132,11 @@ i {
     flex-basis: auto;
   }
 }
+
+/* .nav-box {
+  display: flex;
+  flex-direction: row-reverse;
+} */
 
 @media (max-width: 991px) {
   #navbarSupportedContent ul li a {

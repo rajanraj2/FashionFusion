@@ -3,7 +3,7 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="/styles/wadrobe.css">
+<link rel="stylesheet" href="/styles/wardrobe.css">
 
   
 
@@ -17,15 +17,18 @@
       <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Add or remove clothes from your wadrobe<br></h1>
       <p class="lead">Change associated tags of your clothes or customise its features accroding to your liking. Manage all your clothes at one place.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Manage</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Show</button>
+        <!-- <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Manage</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Show</button> -->
       </div>
     </div>
 </div>
 
+
 <br><br>
 <br><br>
 
+
+<div class="box">
 <h2>File Upload & Image Preview</h2>
 <p class="lead">Add image <b>of your cloth</b></p>
 
@@ -39,7 +42,7 @@
       <i class="fa fa-download" aria-hidden="true"></i>
       <div>Select a file or drag here</div>
       <div id="notimage" class="hidden">Please select an image</div>
-      <span id="file-upload-btn" class="btn btn-primary">Upload</span>
+      <span id="file-upload-btn" class="btn btn-primary">Select</span>
     </div>
     <div id="response" class="hidden">
       <div id="messages"></div>
@@ -49,6 +52,12 @@
     </div>
   </label>
 </form>
+</div>
+
+<br>
+
+<button onclick="window.location.href='/buy'" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Submit Image</button>
+
 
 <br><br>
 <br><br>
