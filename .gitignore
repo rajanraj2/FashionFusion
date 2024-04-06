@@ -1,6 +1,8 @@
+
 *.env
 .env
 *.csv
+
 
 # Logs
 logs
