@@ -1,7 +1,21 @@
 import express from "express";
 
+import session from 'express-session';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const app = express();
 const port = 3000;
+
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET
+}));
+
+export default app;
+
 
 app.use(express.static("public"));
 
