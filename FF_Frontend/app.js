@@ -1,15 +1,45 @@
 import express from "express";
 import session from 'express-session';
 import dotenv from 'dotenv';
+import axios from 'axios';
+import path from 'path';
+import bodyParser from 'body-parser';
+
 // import '../passport.js';
 // import '../Website/passport.cjs';
 
 dotenv.config();
 
-
 const app = express();
 const PORT = process.env.PORT || 4060;
+const server = process.env.SERVER || "http://localhost:4060";
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// function sign() {
+//   axios.post(`${server}/api/v1/user/create-account`, async (req, res) => {
+//     try {
+//       console.log(req.body);
+//       const type = req.body.type;
+//       const participants = req.body.participants;
+//       const response = await axios.get(`https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`);
+//       const result = response.data;
+//       console.log(result);
+//       res.render("index.ejs", { 
+//         data: result[Math.floor(Math.random() * result.length)],
+//        });
+//     } catch (error) {
+//       console.error("Failed to make request:", error.message);
+//       res.render("index.ejs", {
+//         error: "No activities match your criteria.",
+//       });
+//     }
+//   });
+// }
+
+// sign();
 
 // app.use(session({
 //     resave: false,
@@ -59,6 +89,10 @@ app.get("/recommendation", (req, res) => {
 })
 
 app.get("/team", (req, res) => {
+  res.render("team.ejs");
+})
+
+app.get("/logsign", (req, res) => {
   res.render("team.ejs");
 })
 
