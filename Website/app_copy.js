@@ -1,5 +1,5 @@
 import express from "express";
-
+import db from "./db/database.js";
 import session from 'express-session';
 import dotenv from 'dotenv';
 // import '../passport.js';
@@ -7,9 +7,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+
 const app = express();
 const port = 3000;
 
+db();
 // app.use(session({
 //     resave: false,
 //     saveUninitialized: true,
