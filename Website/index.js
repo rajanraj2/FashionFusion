@@ -53,6 +53,10 @@ app.get("/log", (req, res) => {
   res.render("log.ejs");
 })
 
+app.get("/recommendation", (req, res) => {
+  res.render("recommendation.ejs");
+})
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

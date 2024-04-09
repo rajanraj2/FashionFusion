@@ -1,0 +1,74 @@
+<%- include("partials/header.ejs") %>
+
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/search.css">
+
+    <style>
+        .card {
+            width: 18rem;
+            display: inline-block; /* Change display to inline-block */
+            margin-right: 10px; /* Optional: Add margin between cards */
+            vertical-align: top; /* Align cards at the top */
+        }
+    </style>
+
+    <div class="content">
+        <h1>Get Outfit Recommendation</h1>
+        <b>Search for casual, formal or sporty outfits</b>
+    </div>
+    <!-- Navbar items -->
+    <div class="search">
+        <form action="#">
+            <input type="text" placeholder="Casual | Formal | Sporty" name="search">
+            <button>
+                <i class="fa fa-search" style="font-size: 18px;"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- logo with tag -->
+    <div class="content">
+        <p>
+            How many times were you frustrated while
+            looking out for a good pair of
+            clothes?
+            What did you expect and what did you get?
+            This portal has been created to provide
+            well suited and well thought for your clothes.
+        </p>
+    </div>
+    <br><br>
+
+    
+    <div class="card" style="width: 50rem;">
+        <img src="images/ff1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+<br><br>
+    <div class="card" style="width: 50rem;">
+        <img src="images/ff2.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="card" style="width: 50rem;">
+        <img src="images/ff3.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+    <br><br>
+
+
+    
+
+<br><br>
+<br><br>
+
+<%- include("partials/footer.ejs") %>
