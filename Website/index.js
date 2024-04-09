@@ -8,13 +8,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 8000;
+const port = 3000;
 
-app.use(session({
-    resave: false,
-    saveUninitialized: true,
-    secret: process.env.SESSION_SECRET
-}));
+// app.use(session({
+//     resave: false,
+//     saveUninitialized: true,
+//     secret: process.env.SESSION_SECRET
+// }));
 
 export default app;
 
@@ -55,6 +55,10 @@ app.get("/log", (req, res) => {
 
 app.get("/recommendation", (req, res) => {
   res.render("recommendation.ejs");
+})
+
+app.get("/team", (req, res) => {
+  res.render("team.ejs");
 })
 
 app.listen(port, () => {
