@@ -1,0 +1,37 @@
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgba(32, 114, 186, 0.778);
+    color: #495057;
+    font-size: 14px;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+}
+
+/* Your existing CSS styles for the footer */
+/* footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgba(32, 114, 186, 0.778);
+    color: #495057;
+    font-size: 14px;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto; /* This will push the footer to the bottom of its container 
+    width: 100%;  Make the footer span the full width 
+} */
+
+
+/* 
+footer {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgba(114, 121, 128, 0.778);
+    color: #495057;
+    font-size: 14px;
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+ */

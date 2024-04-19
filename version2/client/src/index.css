@@ -1,0 +1,647 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 92%;
+  background-color: lightblue;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  /* display: flex; */
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Hero-content */
+
+.container.grid.grid-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+div img {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.hero-content {
+  display: flex;
+  padding: 2em;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & h1 {
+    margin-bottom: 1em;
+  }
+
+  & p {
+    margin-bottom: 1em;
+    text-align: left;
+  }
+
+  & button {
+    margin-top: 1em;
+  }
+}
+
+
+
+/* Registration form CSS */
+
+
+.section-registration {
+  padding: 2em;
+
+  & .container {
+    padding-top: 2em;
+    align-items: center;
+
+
+    & .registration-img img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .registration-form {
+    padding: 2em;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-transform: capitalize;
+
+    & h1 {
+      margin-bottom: 1em;
+      color: #fff;
+    }
+
+    & .form-group {
+      margin-bottom: 1em;
+
+      & label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #fff;
+      }
+
+      & input {
+        width: 100%;
+        padding: 0.6em 1em;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #1a1a1a;
+        color: #fff;
+      }
+    }
+
+    & .form-group-submit {
+      margin-top: 1em;
+
+      & button {
+        width: 100%;
+        background-color: #646cff;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.registration-form form div {
+  margin-bottom: 20px; /* Adds spacing between each input field */
+}
+
+.registration-form form label {
+  display: block; /* Makes labels appear on a new line */
+  margin-bottom: 5px; /* Adds spacing between label and input */
+}
+
+.registration-form form input {
+  width: 100%; /* Makes the input fields stretch to fill the width of their container */
+  padding: 10px; /* Adds padding inside the input fields */
+  border-radius: 5px; /* Rounds the corners of the input fields */
+  border: 1px solid #ccc; /* Adds a border to the input fields */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Style the submit button */
+.registration-form form .btn-submit {
+  padding: 10px 20px; /* Adds padding to the button */
+  background-color: #007bff; /* Sets the background color */
+  color: #fff; /* Sets the text color */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Style the main heading */
+.registration-form .main-heading {
+  margin-bottom: 20px; /* Adds spacing below the main heading */
+}
+
+
+
+
+/* Login form CSS */
+
+
+.section-login {
+  padding: 2em;
+
+  & .container {
+    padding-top: 2em;
+    align-items: center;
+
+
+    & .login-img img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .login-form {
+    padding: 2em;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-transform: capitalize;
+
+    & h1 {
+      margin-bottom: 1em;
+      color: #fff;
+    }
+
+    & .form-group {
+      margin-bottom: 1em;
+
+      & label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #fff;
+      }
+
+      & input {
+        width: 100%;
+        padding: 0.6em 1em;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #1a1a1a;
+        color: #fff;
+      }
+    }
+
+    & .form-group-submit {
+      margin-top: 1em;
+
+      & button {
+        width: 100%;
+        background-color: #646cff;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.login-form form div {
+  margin-bottom: 20px; /* Adds spacing between each input field */
+}
+
+.login-form form label {
+  display: block; /* Makes labels appear on a new line */
+  margin-bottom: 5px; /* Adds spacing between label and input */
+}
+
+.login-form form input {
+  width: 100%; /* Makes the input fields stretch to fill the width of their container */
+  padding: 10px; /* Adds padding inside the input fields */
+  border-radius: 5px; /* Rounds the corners of the input fields */
+  border: 1px solid #ccc; /* Adds a border to the input fields */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Style the submit button */
+.login-form form .btn-submit {
+  padding: 10px 20px; /* Adds padding to the button */
+  background-color: #007bff; /* Sets the background color */
+  color: #fff; /* Sets the text color */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Style the main heading */
+.login-form .main-heading {
+  margin-bottom: 20px; /* Adds spacing below the main heading */
+}
+
+
+
+
+/* Contact form CSS */
+
+
+.section-contact {
+  padding: 2em;
+
+  & .container {
+    padding-top: 2em;
+    align-items: center;
+
+
+    & .login-img img {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  & .contact-form {
+    padding: 2em;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-transform: capitalize;
+
+    & h1 {
+      margin-bottom: 1em;
+      color: #fff;
+    }
+
+    & .form-group {
+      margin-bottom: 1em;
+
+      & label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #fff;
+      }
+
+      & input {
+        width: 100%;
+        padding: 0.6em 1em;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #1a1a1a;
+        color: #fff;
+      }
+    }
+
+    & .form-group-submit {
+      margin-top: 1em;
+
+      & button {
+        width: 100%;
+        background-color: #646cff;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.contact-form form div {
+  margin-bottom: 20px; /* Adds spacing between each input field */
+}
+
+.contact-form form label {
+  display: block; /* Makes labels appear on a new line */
+  margin-bottom: 5px; /* Adds spacing between label and input */
+}
+
+.contact-form form input {
+  width: 100%; /* Makes the input fields stretch to fill the width of their container */
+  padding: 10px; /* Adds padding inside the input fields */
+  border-radius: 5px; /* Rounds the corners of the input fields */
+  border: 1px solid #ccc; /* Adds a border to the input fields */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Style the submit button */
+.contact-form form .btn-submit {
+  padding: 10px 20px; /* Adds padding to the button */
+  background-color: #007bff; /* Sets the background color */
+  color: #fff; /* Sets the text color */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Style the main heading */
+.contact-form .main-heading {
+  margin-bottom: 20px; /* Adds spacing below the main heading */
+}
+
+
+
+/* Image upload container */
+
+
+.imageUpload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 40%;
+  margin-left: auto; /* Add auto margin for left and right */
+  margin-right: auto;
+  border: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.Outer-box {
+  padding-bottom: 40px;
+}
+
+.imageUpload form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageUpload input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.imageUpload button {
+  padding: 10px 20px;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.imageUpload button:hover {
+  background-color: #585fda;
+}
+
+.wardrobe-btn {
+  padding: 10px 20px;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.wardrobe-btn:hover {
+  background-color: #585fda;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Optional: Center-align content horizontally */
+}
+
+.container > div {
+  margin-bottom: 20px; /* Optional: Add some space between divs */
+}
+
+.services-heading {
+  margin-bottom: 10px; /* Optional: Add some space below the heading */
+  display: flex;
+  justify-content: center; /* Center-align the heading */
+  
+}
+
+.service-heading {
+  text-align: center;
+  animation: colorChange 3s infinite;
+}
+
+
+h1 {
+  color: #646cff;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
+
+
+@keyframes colorChange {
+  0% {
+    color: #646cff;
+  }
+  50% {
+    color: #333; /* Change to whatever original color you want */
+  }
+  100% {
+    color: #646cff;
+  }
+}
+
+.centertext{
+  text-align: center;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.bigbox {
+  border: 2px solid #646cff; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a bit of depth */
+  padding: 10px; /* Add padding around the images */
+  width: 100%;
+}
+
+/* Image upload container */
+
+.wardrobe-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the gap between images */
+  border: 2px solid #646cff; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a bit of depth */
+  padding: 10px; /* Add padding around the images */
+  margin-top: 20px; /* Add margin at the top */
+  width: 100%;
+}
+
+.wardrobe-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border: 1px solid #646cff; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a bit of depth */
+}
+
+
+.wardrobe-image-container {
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+
+.recommend-button {
+  flex: 0.7; /* 70% width */
+}
+
+.delete-button {
+  flex: 0.3; /* 30% width */
+}
+
+
+.upload-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(45, 52, 60, 0.9); /* Semi-transparent white background */
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 9999; /* Ensure the popup appears on top of other content */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  width: 40%; /* Limit the width of the popup */
+  height: 20%;
+}
+
+.upload-popup-content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Recommended images */
+
+
+.recommended-outfit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(26, 100, 179, 0.1);
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.recommended-outfit-item {
+  margin: 10px;
+}
+
+.recommended-outfit-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recommended-outfit-details {
+  text-align: center;
+  margin-top: 5px;
+}
+
+

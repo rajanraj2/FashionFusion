@@ -25,11 +25,11 @@ Follow these steps to run the TT_MERN project:
 2. Navigate into the TT_MERN folder.
 
     ```bash
-    cd FashionFusion
-    cd version2
+    cd MERN
+    cd TT_MERN
     ```
 
-3. Configure the `.env` file: (Creatre .env file at same location where server.js exists [In server folder] )
+3. Configure the `.env` file: (Creatre .env file at same location where server.js exists)
 
     ```plaintext
     # .env
@@ -73,7 +73,7 @@ Follow these steps to run the TT_MERN project:
 
     ```bash
     npm install
-    npm start
+    node server.js
     ```
 
     or if you prefer automatic server restart on file changes:

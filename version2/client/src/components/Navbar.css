@@ -1,0 +1,11 @@
+.container {
+    max-width: 140rem;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    gap: 3.2rem;
+}
