@@ -24,12 +24,13 @@ loaded_model_ts = load_model('Ts_cnn.h5', custom_objects=None, compile=True)
 image_path = sys.argv[1]
 # image_path = image_path[:-4]
 # Find the index of the last dot in the file path
-last_dot_index = image_path.rfind('.')
+# last_dot_index = image_path.rfind('.')
 
 # Remove all characters after the last dot (including the dot itself)
-image_path = image_path[:last_dot_index]
+# image_path = image_path[:last_dot_index]
 
 # img_path = r"D:\GithubWindows\MERN\TT_MERN\server\jeans.jpg"
+# image_path = r"D:\GithubWindows\FashionFusion\version2\server\uploads\jeans.jpg"
 
 img = image.load_img(image_path, target_size=(200, 200))
 plt.imshow(img)

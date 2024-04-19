@@ -12,10 +12,11 @@ const services = async (req, res) => {
 
         // Retrieve the filename of the uploaded image
         const filename = req.file.filename;
-        console.log(`Filename: ${filename}`);
+        // console.log(`Filename: ${filename}`);
 
         // Retrieve the path of the uploaded image file
-        const imagePath = `D:/GithubWindows/MERN/TT_MERN/server/uploads/${filename}.jpg`;
+        const imagePath = `uploads/${filename}`;
+        // console.log(`Image Path: ${imagePath}`);
 
         // console.log(imagePath);
 
@@ -52,6 +53,7 @@ const services = async (req, res) => {
             // res.status(200).json({ msg: "File uploaded successfully", prediction: finalPredictionResult });
             console.log(`Image successfully uploaded and recognised.`);
             // console.log(response);
+            console.log(`clothType: ${finalPredictionResult}`);
             const imageData = {
                 imageName: filename,
                 clothType: finalPredictionResult,
