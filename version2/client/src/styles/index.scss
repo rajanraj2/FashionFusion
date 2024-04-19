@@ -1,0 +1,14 @@
+// styles.scss
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+// Your custom SCSS code here
+.bg-custom {
+    background-color: blue; /* Replace #ff0000 with your desired color */
+  }
+
+//#main{
+    //padding: 8rem;
+//}

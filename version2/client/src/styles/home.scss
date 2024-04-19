@@ -1,0 +1,176 @@
+@import "colors";
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-color: $second;
+    border-radius: 0 0 200px 200px;
+
+    > main {
+        position: absolute;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        justify-content: center;
+
+        > h1 {
+            font: 600 6rem $text1;
+            color: $first;
+        }
+        > p {
+            font: 900 1rem "Roboto";
+            color: $first;
+        }
+    }
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: no-repeat center/auto url(../assets/Hero3.jpg);
+        //filter: blur(3px);
+        border-radius: 0 0 100px 100px;
+    }
+
+}
+
+.home2 {
+    width: 100%;
+    height: 100vh;
+    background-color: $second;
+    padding : 500px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -200px;
+
+    > img {
+       border-radius: 50%;;
+        width: 15%;
+        animation: imgUp 0.7s linear infinite alternate;
+    }
+    >div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem;
+        height: 100vh;
+        color: white;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+        font: 200 1.5rem $text2;
+    }
+
+    
+}
+@keyframes imgUp {
+    to {
+        transform: translateY(-10px);
+    }
+}
+.home3 {
+    width: 100%;
+    height: 130vh;
+    background-color: $second;
+    margin-top: -200px;
+    display: flex;
+     > div {
+        width: 70%;
+        height: 95vh;
+        background-color: $first;
+        border-radius: 0 200px 200px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem;
+
+        > h1 {
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 2px solid $dark;
+            padding:0.5rem;
+            width: 15rem;
+            color: $dark;
+        }
+        > ul {
+            padding: 5rem;
+            letter-spacing: 2px;
+            word-spacing: 7px;
+            line-height: 200%;
+            font:  200 1.4rem $text2;
+            font-weight: 300;
+           
+            
+        }
+     }
+}
+
+.home4 {
+    width: 100%;
+    height: 100vh;
+    background-color: $second;
+    display: flex;
+    justify-content: flex-end;
+
+    > div {
+        background-color: $third;
+        border-radius: 200px 0 0 200px;
+        width: 70%;
+        height: 70vh;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        > h1 {
+            color: $first;
+            text-transform: uppercase;
+            width: 140px;
+            border-bottom: 2px solid $first;
+            padding: 0.5rem;
+            
+        }
+
+        > article {
+            display: flex;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            > div{
+                animation: imgUp 0.7s linear infinite alternate;
+                margin: 1rem;
+                height: 10rem;
+                width: 10rem;
+                background-color: $first;
+                border-radius: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $dark;
+                transition: all 0.5s;
+                &:hover{
+                    filter: invert(1);
+                }
+                img {
+                    border-radius: 50%;
+                }
+                svg {
+                    font-size: 4rem;
+                }
+                p{
+                    font-size: 900 1.2rem $text2;
+                }
+            }
+        }
+    }
+}
