@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Getting Started
 
-Follow these steps to run the TT_MERN project:
+Follow these steps to run the Fashion Fusion project:
 
 1. Clone this repository to your local machine.
 
