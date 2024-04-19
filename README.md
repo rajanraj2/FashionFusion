@@ -19,10 +19,10 @@ Follow these steps to run the TT_MERN project:
 1. Clone this repository to your local machine.
 
     ```bash
-    git clone https://github.com/rajanraj2/MERN.git
+    git clone https://github.com/rajanraj2/FashionFusion.git
     ```
 
-2. Navigate into the TT_MERN folder.
+2. Navigate into the version2 folder.
 
     ```bash
     cd FashionFusion
