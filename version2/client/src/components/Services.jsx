@@ -33,6 +33,8 @@ const Services = () => {
   const [showAddingMessage, setShowAddingMessage] = useState(false);
 
   const [recommendedOutfits, setRecommendedOutfits] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0); // Define currentIndex state
+
 
 
 
@@ -224,12 +226,50 @@ const Services = () => {
   };
 
 
+  const handleRecommendationNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % recommendedOutfits.length);
+  };
+
+  // useEffect(() => {
+  //   // Fetch recommendations when the component mounts
+  //   fetchRecommendations();
+  // }, []); // Empty dependency array ensures this effect runs only once after the initial render
+
+  const fetchRecommendations = async () => {
+    try {
+      const requestBody = {
+        email: currentUser.email,
+      };
+      const response = await fetch("http://localhost:3060/api/recommend", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (response.ok) {
+        const recommendedData = await response.json();
+        setRecommendedOutfits(recommendedData);
+        console.log("Recommendations fetched successfully!");
+      } else {
+        console.error("Failed to fetch recommendations");
+      }
+    } catch (error) {
+      console.error("Error occurred while fetching recommendations:", error);
+    }
+  };
+
+
+  // useEffect(() => {
+  //   // Call handleWardrobeClick when the component is first loaded
+  //   handleWardrobeClick();
+  // }, []); // Empty dependency array ensures this effect runs only once after the initial render
+
   useEffect(() => {
-    // Call handleWardrobeClick when the component is first loaded
+    fetchRecommendations();
     handleWardrobeClick();
-  }, []); // Empty dependency array ensures this effect runs only once after the initial render
-
-
+  }, []);
 
   return (
     <>
@@ -244,10 +284,10 @@ const Services = () => {
        focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" for="restaurantImage">
 
                 Select image
-                <input id="restaurantImage" class="text-sm cursor-pointer w-36 hidden" type="file" />
+                <input id="restaurantImage" class="text-sm cursor-pointer w-36 hidden" type="file" name="clothImage" onChange={handleImageChange} />
               </label>
               <button
-                class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' >
+                class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' onClick={handleWardrobeClick}>
                 remove image </button>
               <button
                 class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' onClick={handleUpload}>
@@ -273,12 +313,79 @@ const Services = () => {
       <div className=' flex justify-between gap-10 max-w-1640px m-auto px-12 py-8'>
 
         <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-            <img class="p-8 rounded-t-lg" src="https://images.pexels.com/photos/228095/pexels-photo-228095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="product image" />
-          </a>
+          <div class="p-8">
+            {/* {recommendedOutfits.map((outfit, index) => (
+              <div key={index} className="recommended-outfit-item">
+                {outfit.ogClothType === "T-shirt" ? (
+                  <>
+                    <img class="rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                    <img class="rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                  </>
+                ) : (
+                  <>
+                    <img class="rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                    <img class="rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                  </>
+                )}
+                <div className="recommended-outfit-details"> */}
+            {/* <p className="recommended-outfit-cloth-type">{outfit.clothTypeR}</p> */}
+            {/* <p className="recommended-outfit-extra">{outfit.extraR}</p> */}
+            {/* </div>
+              </div>
+            ))} */}
+
+            {/* Display only the current recommendation pair */}
+            {recommendedOutfits.length > 0 ? (
+              <div className="recommended-outfit-item">
+                {recommendedOutfits[currentIndex].ogClothType === "T-shirt" ? (
+                  <>
+                    <img
+                      src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].ogImageName}`}
+                      alt={`Recommended outfit ${currentIndex + 1}`}
+                      className="recommended-outfit-image"
+                    />
+                    <img
+                      src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].imageName}`}
+                      alt={`Recommended outfit ${currentIndex + 1}`}
+                      className="recommended-outfit-image"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].imageName}`}
+                      alt={`Recommended outfit ${currentIndex + 1}`}
+                      className="recommended-outfit-image"
+                    />
+                    <img
+                      src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].ogImageName}`}
+                      alt={`Recommended outfit ${currentIndex + 1}`}
+                      className="recommended-outfit-image"
+                    />
+                  </>
+                )}
+                {/* Display any additional details about the recommendation */}
+                <div className="recommended-outfit-details">
+                  {/* <p className="recommended-outfit-cloth-type">{recommendedOutfits[currentIndex].clothTypeR}</p>
+            <p className="recommended-outfit-extra">{recommendedOutfits[currentIndex].extraR}</p> */}
+                </div>
+              </div>
+            ): (
+              <img
+                src="http://localhost:3060/getImages/jeans.jpg"
+                alt="Default outfit"
+                className="recommended-outfit-image"
+              />
+            )}
+
+            {/* <a href="#"> */}
+              {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt="Selected cloth" /> */}
+              {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.imageName}`} alt="Recommended cloth" /> */}
+            {/* </a> */}
+          </div>
           <div class="px-5 pb-5">
             <a href="#">
-              <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h5>
+              <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">This will look good with your selected cloth</h5>
             </a>
             <div class="flex items-center mt-2.5 mb-5">
               <div class="flex items-center space-x-1 rtl:space-x-reverse">
@@ -302,26 +409,30 @@ const Services = () => {
             </div>
             <div class="flex items-center justify-between">
               <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-              <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+              <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={handleRecommendationNext}>Next Recommendation</a>
             </div>
           </div>
         </div>
 
         <div className='overflow-x-auto h-96 w-1/2 bg-red-200 px-12 py-8 rounded-lg'>
           <div className='grid  lg:grid-cols-3 gap-10 pt-10'>
-            {cloth.map((item, index) => (
+            {wardrobeImages.map((image, index) => (
               //  <Link to={`/destination/${item.id}`}>
               <div
                 key={index}
                 className='border shadow-lg rounded-lg hover:scale-105 duration-300'
               >
                 <img
-                  src={item.image}
-                  alt={item.name}
+                  src={`http://localhost:3060/getImages/${image.imageName}`}
+                  alt={`Image ${index + 1}`}
                   className='w-full h-[300px] object-cover rounded-t-lg'
                 />
                 <div className='flex justify-between px-2 py-4'>
-                  <p className='font-bold'>{item.name}</p>
+                  <p className='font-bold'>{image.clothType}</p>
+                </div>
+                <div>
+                  <button onClick={() => handleRecommend(image.imageName, image.clothType, image.extra)} className='bg-blue-500 text-white px-4 py-2 rounded-t-lg'>Recommend</button>
+                  <button onClick={() => handleDelete(image.imageName)} className='bg-red-500 text-white px-4 py-2 rounded-b-lg'>Delete</button>
                 </div>
               </div>
             ))}
