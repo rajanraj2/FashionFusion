@@ -59,8 +59,8 @@ const Services = () => {
         toast.info("AI detecting the type of cloth...");
         setTimeout(() => {
           toast.info("Adding cloth to your wardrobe...");
-        }, 2000); // Delayed toast after 2 second
-      }, 2000); // Delayed toast after 2 second
+        }, 3000); // Delayed toast after 2 second
+      }, 3000); // Delayed toast after 2 second
 
       const formData = new FormData();
       formData.append("clothImage", clothImage);
@@ -166,6 +166,7 @@ const Services = () => {
         clothType: clothType,
         extra: extra
       };
+      console.log("Request body:", requestBody);
       const response = await fetch("http://localhost:3060/api/recommend", {
         method: "POST",
         headers: {
@@ -178,6 +179,7 @@ const Services = () => {
 
       if (response.ok) {
         const recommendedData = await response.json();
+        console.log("Recommended data 1 : ", recommendedData);
         if (recommendedData.length === 0) {
           // If no recommendations, add default outfit
           const defaultOutfit = {
@@ -189,6 +191,7 @@ const Services = () => {
             ogExtra: ogExtra
           };
           setRecommendedOutfits([defaultOutfit]); // Store default outfit in state
+          
         } else {
           // If recommendations exist, store them in state
           recommendedData.forEach(outfit => {
@@ -196,7 +199,10 @@ const Services = () => {
             outfit.ogClothType = ogClothType;
             outfit.ogExtra = ogExtra;
           });
+          console.log("Recommended data 2 :", recommendedData);
           setRecommendedOutfits(recommendedData); // Store recommended outfits in state
+          // handleRecommendationNext();
+          console.log("recommend length : ", recommendedOutfits.length)
         }
         console.log("Recommendation sent successfully!");
       } else {
@@ -275,9 +281,16 @@ const Services = () => {
   // }, []); // Empty dependency array ensures this effect runs only once after the initial render
 
   useEffect(() => {
-    fetchRecommendations();
+    // fetchRecommendations();
     handleWardrobeClick();
   }, []);
+
+  // useEffect(() => {
+  //   if (wardrobeImages.length > 0) {
+  //     const latestImage = wardrobeImages[0];
+  //     handleRecommend(latestImage.imageName, latestImage.clothType, latestImage.extra);
+  //   }
+  // }, [wardrobeImages]);
 
   return (
     <>
@@ -306,10 +319,15 @@ const Services = () => {
             <div
               className="relative order-first md:order-last h-28 md:h-auto flex justify-center items-center border border-dashed border-gray-400 col-span-2 m-2 rounded-lg bg-no-repeat bg-center bg-origin-padding bg-cover">
               <span class="text-gray-400 opacity-75">
-                <svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.7" stroke="currentColor">
+                <svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="0.7" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                 </svg>
+                {clothImagePreview && (
+                  <div className="image-preview">
+                    <img src={clothImagePreview} alt="Selected Image" width="80" height="80" />
+                  </div>
+                )}
               </span>
             </div>
           </div>
@@ -346,7 +364,7 @@ const Services = () => {
             {recommendedOutfits.length > 0 && recommendedOutfits[currentIndex] ? (
               <div className="recommended-outfit-item">
                 {recommendedOutfits[currentIndex].ogClothType == "T-shirt" ? (
-                  <>  
+                  <>
                     <img
                       src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].ogImageName}`}
                       alt={`Recommended outfit ${currentIndex + 1}`}
@@ -378,17 +396,17 @@ const Services = () => {
             <p className="recommended-outfit-extra">{recommendedOutfits[currentIndex].extraR}</p> */}
                 </div>
               </div>
-            ): (
+            ) : (
               <img
-                src="http://localhost:3060/getImages/jeans.jpg"
+                src="http://localhost:3060/getImages/getRecommendation.png"
                 alt="Default outfit"
                 className="recommended-outfit-image"
               />
             )}
 
             {/* <a href="#"> */}
-              {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt="Selected cloth" /> */}
-              {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.imageName}`} alt="Recommended cloth" /> */}
+            {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt="Selected cloth" /> */}
+            {/* <img class="p-8 rounded-t-lg" src={`http://localhost:3060/getImages/${outfit.imageName}`} alt="Recommended cloth" /> */}
             {/* </a> */}
           </div>
           <div class="px-5 pb-5">
@@ -439,7 +457,7 @@ const Services = () => {
                   <p className='font-bold'>{image.clothType}</p>
                 </div>
                 <div>
-                  <button onClick={() => {  handleRecommend(image.imageName, image.clothType, image.extra)}} className='bg-blue-500 text-white px-4 py-2 rounded-t-lg'>Recommend</button>
+                  <button onClick={() => { handleRecommend(image.imageName, image.clothType, image.extra) }} className='bg-blue-500 text-white px-4 py-2 rounded-t-lg'>Recommend</button>
                   <button onClick={() => handleDelete(image.imageName)} className='bg-red-500 text-white px-4 py-2 rounded-b-lg'>Delete</button>
                 </div>
               </div>
