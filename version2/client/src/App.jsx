@@ -17,6 +17,7 @@ import NewRegister from './components/Register.jsx';
 import NewHome from './components/Home.jsx';
 import NewContact from './components/Contact.jsx';
 import NewServices from './components/Services.jsx';
+import NewLogin from './components/Login.jsx';
 
 import "./styles/App.scss";
 import "./styles/header.scss";
@@ -25,7 +26,7 @@ import "./styles/footer.scss";
 import "./styles/contact.scss";
 import "./styles/services.scss";
 import "./styles/mediaquery.scss";
-// import "./styles/login.scss";
+import "./styles/login.scss";
 import "./styles/register.scss";
 import "./styles/index.scss";
 // import "./styles/pro.scss";
@@ -46,7 +47,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<NewContact />} /> 
           <Route path="/register" element={<NewRegister />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<NewLogin />} />
           <Route path="/services" element={<NewServices />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<Error />} />

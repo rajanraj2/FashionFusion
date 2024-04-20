@@ -2,7 +2,10 @@ import React from 'react';
 import vg from "../assets/designer.png";
 //import gg from "../assets/my.jpeg";
 import {AiFillGoogleCircle, AiFillAmazonCircle, AiFillYoutube, AiFillInstagram} from "react-icons/ai";
+import { useAuth } from "../store/auth";
+
 const Home = () => {
+  const { user: currentUser } = useAuth();
   return (
     <>
     <div className="home" id="home">
@@ -26,7 +29,8 @@ const Home = () => {
     </div>
     <div className="home3" id="about">
       <div>
-        <h1>Who we are?</h1>
+        <h1>Hii there {currentUser ? `${currentUser.username} !` : `!`}</h1>
+        <h2>Who we are?</h2>
         <ul>
           <li>Expertise: Our team comprises fashion aficionados with a keen eye for the latest trends and styles.</li>
           <br />

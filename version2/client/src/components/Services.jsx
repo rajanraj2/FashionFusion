@@ -36,6 +36,14 @@ const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0); // Define currentIndex state
 
 
+  const defaultOutfitBeforeRecommend = {
+    imageName: 'noMatch.png',
+    clothType: 'otherOne',
+    extra: 'Default outfit',
+    ogImageName: 'jeans.jpg',
+    ogClothType: 'T-shirt',
+    ogExtra: 'Default outfit'
+  };
 
 
 
@@ -51,8 +59,8 @@ const Services = () => {
         toast.info("AI detecting the type of cloth...");
         setTimeout(() => {
           toast.info("Adding cloth to your wardrobe...");
-        }, 1000); // Delayed toast after 1 second
-      }, 1000); // Delayed toast after 1 second
+        }, 2000); // Delayed toast after 2 second
+      }, 2000); // Delayed toast after 2 second
 
       const formData = new FormData();
       formData.append("clothImage", clothImage);
@@ -296,7 +304,7 @@ const Services = () => {
 
             </div>
             <div
-              class="relative order-first md:order-last h-28 md:h-auto flex justify-center items-center border border-dashed border-gray-400 col-span-2 m-2 rounded-lg bg-no-repeat bg-center bg-origin-padding bg-cover">
+              className="relative order-first md:order-last h-28 md:h-auto flex justify-center items-center border border-dashed border-gray-400 col-span-2 m-2 rounded-lg bg-no-repeat bg-center bg-origin-padding bg-cover">
               <span class="text-gray-400 opacity-75">
                 <svg class="w-14 h-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.7" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round"
@@ -312,8 +320,8 @@ const Services = () => {
 
       <div className=' flex justify-between gap-10 max-w-1640px m-auto px-12 py-8'>
 
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div class="p-8">
+        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="p-8">
             {/* {recommendedOutfits.map((outfit, index) => (
               <div key={index} className="recommended-outfit-item">
                 {outfit.ogClothType === "T-shirt" ? (
@@ -335,10 +343,10 @@ const Services = () => {
             ))} */}
 
             {/* Display only the current recommendation pair */}
-            {recommendedOutfits.length > 0 ? (
+            {recommendedOutfits.length > 0 && recommendedOutfits[currentIndex] ? (
               <div className="recommended-outfit-item">
-                {recommendedOutfits[currentIndex].ogClothType === "T-shirt" ? (
-                  <>
+                {recommendedOutfits[currentIndex].ogClothType == "T-shirt" ? (
+                  <>  
                     <img
                       src={`http://localhost:3060/getImages/${recommendedOutfits[currentIndex].ogImageName}`}
                       alt={`Recommended outfit ${currentIndex + 1}`}
@@ -431,13 +439,14 @@ const Services = () => {
                   <p className='font-bold'>{image.clothType}</p>
                 </div>
                 <div>
-                  <button onClick={() => handleRecommend(image.imageName, image.clothType, image.extra)} className='bg-blue-500 text-white px-4 py-2 rounded-t-lg'>Recommend</button>
+                  <button onClick={() => {  handleRecommend(image.imageName, image.clothType, image.extra)}} className='bg-blue-500 text-white px-4 py-2 rounded-t-lg'>Recommend</button>
                   <button onClick={() => handleDelete(image.imageName)} className='bg-red-500 text-white px-4 py-2 rounded-b-lg'>Delete</button>
                 </div>
               </div>
             ))}
           </div>
         </div>
+        {/* setRecommendedOutfits([defaultOutfitBeforeRecommend]); */}
 
       </div>
 
