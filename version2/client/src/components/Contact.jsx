@@ -94,7 +94,7 @@ const Contact = () => {
                         <input className='message' type="text" required placeholder="Tell us about your query....." name="message" autoComplete="off" value={contact.message} onChange={handleInput}/>
                     </div>
 
-                    <button type="submit"> Send</button>
+                    <button  type="submit"> Send</button>
                 </form>
             </main>
         </div>

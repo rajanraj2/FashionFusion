@@ -15,7 +15,7 @@
         height: 40rem;
         width: 70%;
         padding: 3rem;
-        border-radius: 200px 200px 200px 200px;
+        border-radius: 20px;
 
         > h1{
             text-transform: uppercase;
@@ -71,12 +71,12 @@
                 padding: 0.7rem;
                 border: none;
                 border-radius: 5px;
-                background-color: $third;
+                background-color: #AC8968;
                 color: $first;
                 width: 200px;
                 font: 500 1rem $text1;
                 &:hover{
-                    opacity: 0.9;
+                    background-color: #A69080;
                 }
             }
         }

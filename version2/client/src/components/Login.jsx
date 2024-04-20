@@ -100,7 +100,7 @@ const Login = () => {
                                     <label for="" class="text-xs font-semibold px-1">Email</label>
                                     <div class="flex">
                                         <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                        <input type="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="firstlast@example.com" autoComplete='off' name="email" value={user.email} onChange={handleInput} required/>
+                                        <input type="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-tertiary" placeholder="firstlast@example.com" autoComplete='off' name="email" value={user.email} onChange={handleInput} required/>
                                     </div>
                                 </div>
 
@@ -111,7 +111,7 @@ const Login = () => {
                                     <label for="" class="text-xs font-semibold px-1">Password</label>
                                     <div class="flex">
                                         <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                        <input type="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="************" name="password" required autoComplete="off" value={user.password} onChange={handleInput}/>
+                                        <input type="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-tertiary" placeholder="************" name="password" required autoComplete="off" value={user.password} onChange={handleInput}/>
                                     </div>
                                 </div>
 
@@ -119,7 +119,7 @@ const Login = () => {
                             </div>
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
-                                    <button class="block w-full max-w-xs mx-auto bg-secondary hover:bg-primary focus:bg-blue-700 text-white rounded-lg px-3 py-3 font-semibold" type="submit">SUBMIT</button>
+                                    <button class="block w-full max-w-xs mx-auto bg-primary hover:bg-tertiary text-white rounded-lg px-3 py-3 font-semibold" type="submit">SUBMIT</button>
                                 </div>
                             </div>
                         </form>

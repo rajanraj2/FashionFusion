@@ -84,13 +84,12 @@
         width: 70%;
         height: 95vh;
         background-color: $first;
-        border-radius: 0 200px 200px 0;
+        border-radius: 0 100px 100px 0;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2.5rem;
-
+        // align-items: center;
+        // justify-content: center;
+        padding: 5.5rem;
         > h1 {
             font-weight: 700;
             text-transform: uppercase;
@@ -100,11 +99,11 @@
             color: $dark;
         }
         > ul {
-            padding: 5rem;
-            letter-spacing: 2px;
-            word-spacing: 7px;
-            line-height: 200%;
-            font:  200 1.4rem $text2;
+            padding: 10rem;
+            letter-spacing: 1px;
+            word-spacing: 4px;
+            // line-height: 00%;
+            font:  100 1.4rem $text2;
             font-weight: 300;
            
             
