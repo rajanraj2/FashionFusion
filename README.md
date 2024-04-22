@@ -5,6 +5,9 @@
 
 Welcome to the Fashion Fusion project, a full-stack web application built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. This innovative application empowers users to effortlessly upload images of their clothing items, thereby creating a comprehensive digital wardrobe. Through cutting-edge technology, users can receive personalized outfit recommendations tailored to their unique style preferences and the occasion at hand. This guide will walk you through the steps to set up and run the project on your local machine.
 
+
+![Website home page](homepage.png)
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
@@ -101,5 +104,7 @@ Follow these steps to run the Fashion Fusion project:
     The backend will load on port 3060 by default: [http://localhost:3060](http://localhost:3060).
 
 Now you are ready to explore the website. Have fun!
+
+![alt text](servicespage.png)
 
 ---
