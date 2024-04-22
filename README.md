@@ -25,7 +25,7 @@ Follow these steps to run the Fashion Fusion project:
 2. Navigate into the version2 folder.
 
     ```bash
-    cd FashionFusion/cd version2
+    cd FashionFusion/version2
     ```
     
 
@@ -73,8 +73,11 @@ Follow these steps to run the Fashion Fusion project:
     TF_ENABLE_ONEDNN_OPTS=0 
     ```
 
+7. Download and save the three AI models from the given link in the server folder: (Don't change the name of the files)
+    Link - https://drive.google.com/drive/folders/1Ch5HxHfMXUnS1zcQdkFJNuBEVba-8U7z?usp=sharing
 
-7. Install dependencies and start the backend server.
+
+8. Install dependencies and start the backend server.
 
     ```bash
     npm install
