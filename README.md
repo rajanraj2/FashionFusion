@@ -25,11 +25,38 @@ Follow these steps to run the Fashion Fusion project:
 2. Navigate into the version2 folder.
 
     ```bash
-    cd FashionFusion
-    cd version2
+    cd FashionFusion/cd version2
+    ```
+    
+
+3. To run the frontend, navigate to the client folder.
+
+    ```bash
+    cd client
     ```
 
-3. Configure the `.env` file: (Creatre .env file at same location where server.js exists [In server folder] )
+4. Install dependencies and start the frontend server.
+
+    ```bash
+    npm install
+    ```
+
+    ```bash
+    npm run dev
+    ```
+
+    The frontend will load on port 5173 by default: [http://localhost:5173](http://localhost:5173).
+
+5. To run the backend, navigate to the server folder.
+
+    ```bash
+    cd server
+    ```
+
+    If you are already in the `client` folder, use `cd ../server` to navigate to the server folder.
+
+
+6. Configure the `.env` file: (Creatre .env file at same location where server.js exists [In server folder] )
 
     ```plaintext
     # .env
@@ -46,33 +73,14 @@ Follow these steps to run the Fashion Fusion project:
     TF_ENABLE_ONEDNN_OPTS=0 
     ```
 
-4. To run the frontend, navigate to the client folder.
-
-    ```bash
-    cd client
-    ```
-
-5. Install dependencies and start the frontend server.
-
-    ```bash
-    npm install
-    npm run dev
-    ```
-
-    The frontend will load on port 5173 by default: [http://localhost:5173](http://localhost:5173).
-
-6. To run the backend, navigate to the server folder.
-
-    ```bash
-    cd server
-    ```
-
-    If you are already in the `client` folder, use `cd ../server` to navigate to the server folder.
 
 7. Install dependencies and start the backend server.
 
     ```bash
     npm install
+    ```
+
+    ```bash
     npm start
     ```
 
@@ -80,6 +88,11 @@ Follow these steps to run the Fashion Fusion project:
 
     ```bash
     nodemon server.js
+    ```
+
+    or if nodemon is not working properly use node:
+    ```bash
+    node server.js
     ```
 
     The backend will load on port 3060 by default: [http://localhost:3060](http://localhost:3060).
