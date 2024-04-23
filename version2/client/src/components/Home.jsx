@@ -105,7 +105,7 @@ const Home = () => {
             }}>
               <img src={himanshu}></img>
               <p className='font-medium'>Himanshu Dahiya</p>
-              <p>AI Engineer</p>
+              <p>AI/ML Developer</p>
             </div>
 
             {/* <div style={{

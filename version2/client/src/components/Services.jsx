@@ -307,15 +307,16 @@ const Services = () => {
                 Select image
                 <input id="restaurantImage" class="text-sm cursor-pointer w-36 hidden" type="file" name="clothImage" onChange={handleImageChange} />
               </label>
-              <button
+              {/* <button
                 class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' onClick={handleWardrobeClick}>
-                remove image </button>
+                Open wardrobe </button> */}
               <button
                 class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' onClick={handleUpload}>
                 Upload </button>
 
 
             </div>
+            
             <div
               className="relative order-first md:order-last h-28 md:h-auto flex justify-center items-center border border-dashed border-gray-400 col-span-2 m-2 rounded-lg bg-no-repeat bg-center bg-origin-padding bg-cover">
               <span class="text-gray-400 opacity-75">
@@ -440,7 +441,10 @@ const Services = () => {
           </div>
         </div>
 
-        <div className='overflow-x-auto h-[800px] w-2/3 bg-tertiary px-12 py-8 rounded-lg'>
+        <div className='overflow-x-auto h-[800px]  w-2/3 bg-tertiary px-12 py-8 rounded-lg'>
+        <button
+                class='inline-flex items-center shadow-md my-2 px-2 py-2 bg-gray-900 text-gray-50  border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150' onClick={handleWardrobeClick}>
+                Open wardrobe </button>
           <div className='grid  lg:grid-cols-3 gap-10 pt-10'>
             {wardrobeImages.map((image, index) => (
               //  <Link to={`/destination/${item.id}`}>
