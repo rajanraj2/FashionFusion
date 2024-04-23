@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from "react-router-hash-link";
 
 import "../styles/index.scss";
 // import "./Login";
@@ -157,6 +158,7 @@ const Register = () => {
 
 
                             </div>
+                            <div><p className='text-sm pb-4'>By creating an account you agree to our <a href='http://localhost:5173/term' className='text-blue-900 ' >Privacy Policy & Terms and conditions</a></p></div>
                             <div className="flex -mx-3">
                                 <div className="w-full px-3 mb-5">
                                     <button className="block w-full max-w-xs mx-auto bg-primary hover:bg-tertiary  text-white rounded-lg px-3 py-3 font-semibold" onClick={handleSubmit}>REGISTER</button>

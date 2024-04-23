@@ -19,6 +19,7 @@ import NewContact from './components/Contact.jsx';
 import NewServices from './components/Services.jsx';
 import NewLogin from './components/Login.jsx';
 import Pro from './components/Pros.jsx';
+import Term from './components/Term.jsx';
 
 import "./styles/App.scss";
 import "./styles/header.scss";
@@ -52,6 +53,7 @@ function App() {
           <Route path="/services" element={<NewServices />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/pro" element={<Pro />} />
+          <Route path="/term" element={<Term />} />
           <Route path="*" element={<Error />} />
         </Routes> 
 
