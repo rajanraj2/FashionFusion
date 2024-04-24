@@ -1,6 +1,5 @@
 *.csv
 *.ipynb
-!main.ipynb
 *.h5
 
 # Logs
