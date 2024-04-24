@@ -77,6 +77,7 @@ Follow these steps to run the Fashion Fusion project:
     ```
 
 7. Download and save the three AI models from the given link in the server folder: (Don't change the name of the files)
+    Download and save the following 3 files : "FFmy_model.h5"    "Tr_cnn.h5"    "Ts_cnn.h5"
     Link - https://drive.google.com/drive/folders/1Ch5HxHfMXUnS1zcQdkFJNuBEVba-8U7z?usp=sharing
 
 
