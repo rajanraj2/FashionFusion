@@ -6,6 +6,7 @@ import rajan from "../assets/rajan.jpg";
 import himanshu from "../assets/himanshu.jpg";
 import { AiFillGoogleCircle, AiFillAmazonCircle, AiFillYoutube, AiFillInstagram } from "react-icons/ai";
 import { useAuth } from "../store/auth";
+import yashswi from "../assets/yashswi.png";
 
 const Home = () => {
   const { user: currentUser } = useAuth();
@@ -14,7 +15,7 @@ const Home = () => {
       <div className="home" id="home">
         <main>
 
-          <h1>Fashion Fusion</h1>
+          <h1>Closet Companion</h1>
           <p>No More "WHAT TO WEAR TODAY?"</p>
         </main>
       </div>
@@ -90,22 +91,22 @@ const Home = () => {
               animationDelay: "0.3s",
             }}>
               <img src={gg}></img><p className='font-medium'>Sejal Kaur</p>
-              <p>Frontend Developer</p>
+              {/* <p>Frontend Developer</p> */}
             </div>
 
             <div style={{
               animationDelay: "0.5s",
             }}>
               <img src={rajan}></img><p className='font-medium'>Rajan Raj</p>
-              <p>Backend Developer</p>
+              {/* <p>Backend Developer</p> */}
             </div>
 
             <div style={{
               animationDelay: "0.7s",
             }}>
-              <img src={himanshu}></img>
-              <p className='font-medium'>Himanshu Dahiya</p>
-              <p>AI/ML Developer</p>
+              <img src={yashswi}></img>
+              <p className='font-medium'>Yashaswi Shukla</p>
+              {/* <p>AI/ML Developer</p> */}
             </div>
 
             {/* <div style={{

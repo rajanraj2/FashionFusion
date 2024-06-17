@@ -4,6 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { useAuth } from "../store/auth"
 import vg from "../assets/Faishon.png";
 // import { useState } from 'react';
+import cc from "../assets/CC.png";
 
 const Header = () => {
   const { isLoggedIn } = useAuth();
@@ -12,7 +13,8 @@ const Header = () => {
     <nav className='border-b-4 border-tertiary'>
       {/* <h1 className='underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600'>FashionFusion</h1> */}
       <div className='flex items-center'>
-      <HashLink to={"/#home"}><img className='h-25 w-40' src={vg} alt="" /></HashLink>
+      {/* <HashLink to={"/#home"}><img className='h-25 w-40' src={vg} alt="" /></HashLink> */}
+      <HashLink to={"/#home"}><img className='h-25 w-40' src={cc} alt="" /></HashLink>
         {/* <Link to={"/Pro"} onClick={handleProClick}>Pro</Link> */}
         <button className=' text-white bg-primary hover:bg-tertiary font-medium rounded-lg  px-5 py-0.6'>Pro</button>
       </div>

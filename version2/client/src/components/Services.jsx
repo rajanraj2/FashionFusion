@@ -458,7 +458,8 @@ const Services = () => {
                   className='w-full h-[250px] object-cover rounded-t-lg'
                 />
                 <div className='flex justify-between px-2 py-4'>
-                  <p className='font-bold'>{image.clothType}</p>
+                  <p className='font-bold'>{image.clothType} {image.extra}</p>
+                  <p className=''> {image.extra}</p>
                 </div>
                 <div className="w-full flex pb-4 px-4 items-end justify-between">
                   <button onClick={() => { handleRecommend(image.imageName, image.clothType, image.extra) }} className='bg-blue-500 w-[140px] text-white px-4 py-2 rounded-lg'>Suggest</button>
