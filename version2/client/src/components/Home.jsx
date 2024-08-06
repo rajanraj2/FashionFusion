@@ -104,8 +104,8 @@ const Home = () => {
             <div style={{
               animationDelay: "0.7s",
             }}>
-              <img src={yashswi}></img>
-              <p className='font-medium'>Yashaswi Shukla</p>
+              <img src={himanshu}></img>
+              <p className='font-medium'>Himanshu Dahiya</p>
               {/* <p>AI/ML Developer</p> */}
             </div>
 
