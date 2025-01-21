@@ -1,0 +1,37 @@
+trigger:
+- main  # Adjust this to match your branch name
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use an appropriate VM image for your pipeline
+
+jobs:
+- job: BuildAndDeploy
+  displayName: 'Build and Deploy Node.js app'
+  
+  steps:
+  # Step 1: Checkout the code from the repository
+  - checkout: self
+
+  # Step 2: Set up Node.js environment
+  - task: UseNode@2
+    inputs:
+      versionSpec: '18.0'  # Specify the Node.js version you need
+
+  # Step 3: Install dependencies
+  - script: |
+      cd fashionfusion/version2/server  # Navigate to the folder containing the package.json
+      npm install  # Install dependencies from package.json in the correct folder
+    displayName: 'Install dependencies'
+
+  # Step 4: Build the app (if necessary)
+  - script: |
+      cd fashionfusion/version2/server  # Ensure you're still in the correct directory
+      npm run build  # Only if you have a build script
+    displayName: 'Build the app'  # Optional: Only if your app requires a build step
+  
+  # Step 5: Deploy to Azure Web App
+  - task: AzureWebApp@1
+    inputs:
+      appName: 'fashionfusion'  # Replace with your Azure Web App name
+      package: '$(Build.ArtifactStagingDirectory)/your-artifact.zip'  # Replace with the actual package if needed
+    displayName: 'Deploy to Azure Web App'
