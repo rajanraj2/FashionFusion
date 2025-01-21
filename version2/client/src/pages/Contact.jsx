@@ -41,7 +41,7 @@ export const Contact = () => {
         // alert("Message sent successfully.");
 
         try{
-            const response = await fetch("http://localhost:3060/api/form/contact", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/form/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
