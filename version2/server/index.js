@@ -18,7 +18,8 @@ const app = express();
 
 const corsOptions = {
   // origin: "http://localhost:5173",
-  origin: "https://fashion-fusion-beige.vercel.app/",
+  // origin: "https://fashion-fusion-beige.vercel.app/",
+  origin: "*",
   methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
   credentials: true,
 };
