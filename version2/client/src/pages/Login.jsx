@@ -3,7 +3,8 @@ import {useNavigate} from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:3060/api/auth/login";
+// const URL = "http://localhost:3060/api/auth/login";
+const URL = `${process.env.REACT_APP_API_URL}/api/auth/login`;
 
 export const Login = () => {
 

@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
-const URL = "http://localhost:3060/api/auth/register";
+// const URL = "http://localhost:3060/api/auth/register";
+const URL = `${process.env.REACT_APP_API_URL}/api/auth/register`;
+const URL2 = `${process.env.REACT_APP_API_URL}/api/auth/login`;
 
 export const Register = () => {
 
@@ -54,7 +56,7 @@ export const Register = () => {
                 toast.success("Registration successful");
 
                 // Perform login after registration
-                const loginResponse = await fetch("http://localhost:3060/api/auth/login", {
+                const loginResponse = await fetch(URL2, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
+const URL = `${process.env.REACT_APP_API_URL}`;
 
 export const Services = () => {
     const [clothImage, setClothImage] = useState(null);
@@ -44,7 +45,8 @@ export const Services = () => {
             formData.append("email", currentUser.email);
 
             setShowAddingMessage(true);
-            const response = await fetch("http://localhost:3060/api/upload", {
+            // URL + "/api/upload"
+            const response = await fetch(`${URL}/api/upload`, {
                 method: "POST",
                 body: formData,
             });
@@ -107,7 +109,7 @@ export const Services = () => {
                 email: currentUser.email
             };
 
-            const response = await fetch("http://localhost:3060/api/getImages", {
+            const response = await fetch(`${URL}/api/getImages`, {
                 method: "POST", // Change the method to POST
                 headers: {
                     "Content-Type": "application/json"
@@ -142,7 +144,7 @@ export const Services = () => {
                 clothType: clothType,
                 extra: extra
             };
-            const response = await fetch("http://localhost:3060/api/recommend", {
+            const response = await fetch(`${URL}/api/recommend`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -190,7 +192,7 @@ export const Services = () => {
                 email: currentUser.email,
                 imageName: imageName,
             };
-            const response = await fetch("http://localhost:3060/api/deleteImages", {
+            const response = await fetch(`${URL}/api/deleteImages`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -286,13 +288,13 @@ export const Services = () => {
                     <div key={index} className="recommended-outfit-item">
                         {outfit.ogClothType === "T-shirt" ? (
                             <>
-                                <img src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
-                                <img src={`http://localhost:3060/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
                             </>
                         ) : (
                             <>
-                                <img src={`http://localhost:3060/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
-                                <img src={`http://localhost:3060/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
                             </>
                         )}
                         <div className="recommended-outfit-details">
@@ -319,7 +321,7 @@ export const Services = () => {
                         <div key={index} className="wardrobe-image-container">
 
                             <img
-                                src={`http://localhost:3060/getImages/${image.imageName}`}
+                                src={`${URL}/getImages/${image.imageName}`}
                                 alt={`Wardrobe image ${index + 1}`}
                                 className="wardrobe-image"
                             />
