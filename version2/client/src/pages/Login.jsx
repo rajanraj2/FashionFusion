@@ -4,7 +4,7 @@ import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
 // const URL = "http://localhost:3060/api/auth/login";
-const URL = `${process.env.REACT_APP_API_URL}/api/auth/login`;
+// const URL = `${process.env.REACT_APP_API_URL}/api/auth/login`;
 
 export const Login = () => {
 
@@ -30,7 +30,7 @@ export const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(URL, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

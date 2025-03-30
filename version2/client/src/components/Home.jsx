@@ -15,7 +15,7 @@ const Home = () => {
       <div className="home" id="home">
         <main>
 
-          <h1>Closet Companion</h1>
+          <h1>Fashion Fusion</h1>
           <p>No More "WHAT TO WEAR TODAY?"</p>
         </main>
       </div>

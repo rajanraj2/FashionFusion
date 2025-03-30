@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
-const URL = `${process.env.REACT_APP_API_URL}`;
+// const URL = `${process.env.REACT_APP_API_URL}`;
+// const URL = "http://localhost:3060";
 
 export const Services = () => {
     const [clothImage, setClothImage] = useState(null);
@@ -46,7 +47,7 @@ export const Services = () => {
 
             setShowAddingMessage(true);
             // URL + "/api/upload"
-            const response = await fetch(`${URL}/api/upload`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/upload`, {
                 method: "POST",
                 body: formData,
             });
@@ -108,8 +109,9 @@ export const Services = () => {
             const requestBody = {
                 email: currentUser.email
             };
-
-            const response = await fetch(`${URL}/api/getImages`, {
+            
+            console.log("API URL:", `${process.env.REACT_APP_API_URL}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getImages`, {
                 method: "POST", // Change the method to POST
                 headers: {
                     "Content-Type": "application/json"
@@ -144,7 +146,7 @@ export const Services = () => {
                 clothType: clothType,
                 extra: extra
             };
-            const response = await fetch(`${URL}/api/recommend`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/recommend`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -192,7 +194,7 @@ export const Services = () => {
                 email: currentUser.email,
                 imageName: imageName,
             };
-            const response = await fetch(`${URL}/api/deleteImages`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/deleteImages`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -288,13 +290,13 @@ export const Services = () => {
                     <div key={index} className="recommended-outfit-item">
                         {outfit.ogClothType === "T-shirt" ? (
                             <>
-                                <img src={`${URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
-                                <img src={`${URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${process.env.REACT_APP_API_URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${process.env.REACT_APP_API_URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
                             </>
                         ) : (
                             <>
-                                <img src={`${URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
-                                <img src={`${URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${process.env.REACT_APP_API_URL}/getImages/${outfit.imageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
+                                <img src={`${process.env.REACT_APP_API_URL}/getImages/${outfit.ogImageName}`} alt={`Recommended outfit ${index + 1}`} className="recommended-outfit-image" />
                             </>
                         )}
                         <div className="recommended-outfit-details">
@@ -321,7 +323,7 @@ export const Services = () => {
                         <div key={index} className="wardrobe-image-container">
 
                             <img
-                                src={`${URL}/getImages/${image.imageName}`}
+                                src={`${process.env.REACT_APP_API_URL}/getImages/${image.imageName}`}
                                 alt={`Wardrobe image ${index + 1}`}
                                 className="wardrobe-image"
                             />

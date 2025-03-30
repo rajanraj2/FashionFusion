@@ -67,6 +67,7 @@ export const Contact = () => {
             }
         }
         catch (err) {
+            console.log("contact errrr",err);
             console.log(err);
         }
     }
